@@ -6,17 +6,17 @@ En aquest programa es busca controlar la salut general física de les persones.
 
 ## Opcions
 
-1. Introduir dades
+1. __Introduir dades__
 </br>Obtenir per consola i válidar les següents dades:
     - Nom complet
     - Edat
     - Pes (Kg)
     - Alçada (m)
 
-2. Modificació de dades
+2. __Modificació de dades__
 </br>Selecciona i modificar una dada concreta.
 
-3. Càlcul i visualització de paràmetres
+3. __Calcular i visualitzar els paràmetres__
 </br>Calcular una sèrie de paràmetres que mostrarà per pantalla a l’usuari:
     - Nom (amb format)
     - Edat | Pes (kg) | Alçada (m)
@@ -25,6 +25,8 @@ En aquest programa es busca controlar la salut general física de les persones.
     - Zona FC objectiu (x-y bpm)
     - Aigua recomanada (L/dia)
     - Any de naixement aproximat
+
+4. __Sortir del programa__
 
 ## Fitxers
 
