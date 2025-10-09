@@ -16,6 +16,16 @@ En aquest programa es busca controlar la salut general física de les persones.
 2. Modificació de dades
 </br>Selecciona i modificar una dada concreta.
 
+3. Càlcul i visualització de paràmetres
+</br>Calcular una sèrie de paràmetres que mostrarà per pantalla a l’usuari:
+    - Nom (amb format)
+    - Edat | Pes (kg) | Alçada (m)
+    - IMC (Nº i categoria)
+    - FC màxima estimada (bpm)
+    - Zona FC objectiu (x-y bpm)
+    - Aigua recomanada (L/dia)
+    - Any de naixement aproximat
+
 ## Fitxers
 
 - [__Diagrama__](Diagrama.drawio)
