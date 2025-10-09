@@ -30,8 +30,11 @@ En aquest programa es busca controlar la salut general física de les persones.
 
 ## Fitxers
 
-- [__Diagrama__](Diagrama.drawio)
+- [__docs/Diagrama__](docs/Diagrama.drawio)
 </br>Aquest conté el diagrama de flux del programa en qüestió.
+
+- [__App.java__](/App.java)
+</br>Fitxer principal del programa.
 
 ## Llicència
 
