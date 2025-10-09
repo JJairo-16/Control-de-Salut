@@ -13,6 +13,9 @@ En aquest programa es busca controlar la salut general física de les persones.
     - Pes (Kg)
     - Alçada (m)
 
+2. Modificació de dades
+</br>Selecciona i modificar una dada concreta.
+
 ## Fitxers
 
 - [__Diagrama__](Diagrama.drawio)
