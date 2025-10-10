@@ -33,6 +33,9 @@ En aquest programa es busca controlar la salut general física de les persones.
 - [__docs/Diagrama__](docs/Diagrama.drawio)
 </br>Aquest conté el diagrama de flux del programa en qüestió.
 
+- [__tests/Pla de proves.xlsx__](/tests/Pla%20de%20proves.xlsx)
+</br>Aquest conté la planificació de validacions necessàries.
+
 - [__App.java__](/App.java)
 </br>Fitxer principal del programa.
 
