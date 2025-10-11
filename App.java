@@ -51,7 +51,7 @@ public class App {
             // * Protecció d'errors de l'opció seleccionada
             // ? Comprova si no ha seleccionat res
             if (input.isBlank()) {
-                System.out.println("No ha seleccionat ninguna opció. Si us plau, seleccioni una opció:\n\n");
+                System.out.println("No ha seleccionat cap opció. Si us plau, seleccioni una opció:\n\n");
                 needContinue = true;
 
             } else { // ? Si hi ha contingut
@@ -144,7 +144,7 @@ public class App {
                                 }
 
                             } catch (java.lang.NumberFormatException e) { // ? No és un nombre
-                                System.out.println("L'edat ha de ser un nombre natual. Si us plau, torni a intentar-ho:\n\n");
+                                System.out.println("L'edat ha de ser un nombre natural. Si us plau, torni a intentar-ho:\n\n");
                             
                             } catch (Exception e) { // ? Altres
                                 System.out.println("Alguna cosa ha sortit malament. Si us plau, torni a intentar-ho:\n\n");
@@ -200,7 +200,7 @@ public class App {
                             try {
                                 tempHeight = parseDouble(input);
 
-                                if (tempHeight < 0.5) { // ? L'alçada es meno a 0.5m
+                                if (tempHeight < 0.5) { // ? L'alçada es menor a 0.5m
                                     System.out.println("L'alçada ha de ser igual o major a 0.5m. Si us plau, torni a intentar-ho:\n\n");
                                 
                                 } else if (tempHeight > 2.5) { // ? L'alçada es major a 2.5m
@@ -227,7 +227,7 @@ public class App {
                     height = tempHeight;
 
                     // * Finalització
-                    System.out.println("\n\n");
+                    System.out.println("\nDades guardades correctament\n\n");
 
                     break;
 
@@ -262,7 +262,7 @@ public class App {
                         // * Protecció d'errors de l'opció seleccionada
                         // ? Comprova si no ha seleccionat res
                         if (input.isBlank()) {
-                            System.out.println("No ha seleccionat ninguna opció. Si us plau, seleccioni una opció:\n\n");
+                            System.out.println("No ha seleccionat cap opció. Si us plau, seleccioni una opció:\n\n");
                             needContinue = true;
 
                         } else { // ? Si hi ha contingut
@@ -357,7 +357,7 @@ public class App {
                                         }
 
                                     } catch (java.lang.NumberFormatException e) { // ? No és un nombre
-                                        System.out.println("L'edat ha de ser un nombre natual. Si us plau, torni a intentar-ho:\n\n");
+                                        System.out.println("L'edat ha de ser un nombre natural. Si us plau, torni a intentar-ho:\n\n");
                                     
                                     } catch (Exception e) { // ? Altres
                                         System.out.println("Alguna cosa ha sortit malament. Si us plau, torni a intentar-ho:\n\n");
@@ -431,7 +431,7 @@ public class App {
                                     try {
                                         tempHeight = parseDouble(input);
 
-                                        if (tempHeight < 0.5) { // ? L'alçada es meno a 0.5m
+                                        if (tempHeight < 0.5) { // ? L'alçada es menor a 0.5m
                                             System.out.println("L'alçada ha de ser igual o major a 0.5m. Si us plau, torni a intentar-ho:\n\n");
                                         
                                         } else if (tempHeight > 2.5) { // ? L'alçada es major a 2.5m
@@ -490,7 +490,7 @@ public class App {
                     // ? Aigua recomenada
                     double water;
 
-                    // ? Any de naaixement
+                    // ? Any de naixement
                     int birthYear;
 
                     // Format del nom
@@ -511,10 +511,6 @@ public class App {
                     }
 
                     name = buffer;
-
-                    // Donar format al pes i alçada
-                    weight = Math.floor(weight * 100.0) / 100.0;
-                    height = Math.floor(height * 100.0) / 100.0;
 
                     // * Calcular paràmetres
                     // IMC
