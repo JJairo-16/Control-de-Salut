@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import java.time.Year;
+
 public class App {
     public static void main(String[] args) {
         // * Declaració de variables
@@ -93,7 +95,7 @@ public class App {
                     // * Obtenir nom
                     inputLoop = true;
                     while (inputLoop) {
-                        System.out.print("Introdueixi el seu nom complet, si us plau: ");
+                        System.out.print("Introdueixi el seu nom complet (sense accents), si us plau: ");
                         tempName = scanner.nextLine();
 
                         // Vàlidar nom
@@ -298,7 +300,7 @@ public class App {
                             // Obtenció de la nova dada
                             inputLoop = true;
                             while (inputLoop) {
-                                System.out.print("Introdueixi el seu nom complet, si us plau: ");
+                                System.out.print("Introdueixi el seu nom complet (sense accents), si us plau: ");
                                 tempName = scanner.nextLine();
 
                                 // Vàlidar nom
@@ -460,7 +462,103 @@ public class App {
                              
                     break;
 
-                case 3: // *
+                case 3: // * Càlcul i visualització de paràmetres
+                    // * Validació
+                    boolean canVisualize = (!name.isEmpty()) && (age != -1) && (weight != -1) && (height != -1);
+                    if (!canVisualize) {
+                        System.out.println("No s'han trobat dades. Si us plau, introdueixi les dades previament:\n\n");
+                        break;
+                    }
+
+                    // * Declaració de variables
+                    // Dades
+
+                    // ? IMC
+                    double imc;
+                    String imcClassification;
+
+                    // ? Freqüència cardíaca màxima estimada
+                    int fcMax;
+
+                    // ? Zones
+                    final double MIN_ZONE = 0.50;
+                    final double MAX_ZONE = 0.85;
+
+                    int fcZMin;
+                    int fcZMax;
+
+                    // ? Aigua recomenada
+                    double water;
+
+                    // ? Any de naaixement
+                    int birthYear;
+
+                    // Format del nom
+                    String buffer; // ? Utilitzat per la capitalització del nom
+                    boolean upper; // ? Determinar si la lletra es majuscula
+
+                    // * Format
+                    // Donar format al nom
+                    tempName = name.trim().replaceAll("\\s+", " ").toLowerCase(); // ? Eliminar espais als costats | eliminar espais sobrants | passar a minusculas
+                    
+                    buffer = "";
+                    for (int i = 0; i < tempName.length(); i++) {
+                        char c = tempName.charAt(i);
+
+                        upper = (i == 0 || tempName.charAt(i - 1) == ' '); // ? Serà majuscula si és la primera lletra del String o de la paraula
+
+                        buffer += upper ? Character.toUpperCase(c) : c;
+                    }
+
+                    name = buffer;
+
+                    // Donar format al pes i alçada
+                    weight = Math.floor(weight * 100.0) / 100.0;
+                    height = Math.floor(height * 100.0) / 100.0;
+
+                    // * Calcular paràmetres
+                    // IMC
+                    imc = weight / (height * height);
+                    if (imc < 18.5) {
+                        imcClassification = "pes baix";
+                    
+                    } else if (imc < 25) {
+                        imcClassification = "pes normal";
+                    
+                    } else if (imc < 30) {
+                        imcClassification = "sobrepès";
+                    
+                    } else {
+                        imcClassification = "obesitat";
+                    }
+
+                    // Freqüència cardíaca màxima estimada
+                    fcMax = 220 - age;
+                    fcZMin = (int) Math.round(fcMax * MIN_ZONE);
+                    fcZMax = (int) Math.round(fcMax * MAX_ZONE);
+
+                    // Aigua diària recomanada
+                    water = (35 * weight) / 1000;
+
+                    // Any de naixement aproximat
+                    int year = Year.now().getValue();
+                    birthYear = year - age;
+
+                    // * Mostrar paràmetres
+                    System.out.println("== Dades ==");
+                    System.out.printf("Hola, %s!%n", name);
+                    System.out.printf("Edat: %d | Pes: %.2f kg | Alçada: %.2f m%n", age, weight, height);
+                    System.out.printf("IMC: %.2f (%s)%n", imc, imcClassification);
+                    System.out.printf("FC màxima estimada: %d bpm%n", fcMax);
+                    System.out.printf("Zona FC objectiu: %d-%d bpm%n", fcZMin, fcZMax);
+                    System.out.printf("Aigua recomanada: %.2f L/dia%n", water);
+                    System.out.printf("Any de naixement aproximat: %d%n", birthYear);
+
+                    // * Finalització
+                    System.out.print("\nPrem enter per continuar: ");
+                    scanner.nextLine();
+                    System.out.println("\n\n");
+
                     break;
 
                 case 4: // * Sortir
