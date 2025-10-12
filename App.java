@@ -83,7 +83,7 @@ public class App {
             // * Processar opció
             switch (menuOption) {
                 case 1: // * Guardar dades
-                    // * Missatge inical
+                    // * Missatge inicial
                     System.out.println("== Guardar dades ==");
 
                     // * Inicialització de variables
@@ -98,15 +98,15 @@ public class App {
                         System.out.print("Introdueixi el seu nom complet (sense accents), si us plau: ");
                         tempName = scanner.nextLine();
 
-                        // Vàlidar nom
-                        if (tempName.isBlank()) { // ? Està en blanc o només son espais en blanc
-                            System.out.println("El nom no pot està en blanc. Si us plau, torni a intentar-ho:\n\n");
+                        // Validar nom
+                        if (tempName.isBlank()) { // ? Està en blanc o només són espais en blanc
+                            System.out.println("El nom no pot estar en blanc. Si us plau, torni a intentar-ho:\n\n");
 
                         } else if (tempName.length() < 3) { // ? El nom és massa curt
-                            System.out.println("El nom es massa curt. Si us plau, torni a intentar-ho:\n\n");
+                            System.out.println("El nom és massa curt. Si us plau, torni a intentar-ho:\n\n");
 
                         } else if (tempName.length() > 30) { // ? El nom és massa llarg
-                            System.out.println("El nom es massa llarg. Si us plau, torni a intentar-ho:\n\n");
+                            System.out.println("El nom és massa llarg. Si us plau, torni a intentar-ho:\n\n");
 
                         } else {
                             try {
@@ -125,9 +125,9 @@ public class App {
                         System.out.print("Introdueixi la seva edat, si us plau: ");
                         input = scanner.nextLine();
 
-                        // Vàlidar edat
-                        if (input.isBlank()) { // ? Està en blanc o només son espais en blanc
-                            System.out.println("L'edat no pot està en blanc. Si us plau, torni a intentar-ho:\n\n");
+                        // Validar edat
+                        if (input.isBlank()) { // ? Està en blanc o només són espais en blanc
+                            System.out.println("L'edat no pot estar en blanc. Si us plau, torni a intentar-ho:\n\n");
 
                         } else { // ? Si hi ha contingut
                             try {
@@ -155,11 +155,11 @@ public class App {
                     // * Obtenir pes
                     inputLoop = true;
                     while (inputLoop) {
-                        System.out.print("Introdueixi el seu pes (Kg), si us plau: ");
+                        System.out.print("Introdueixi el seu pes (kg), si us plau: ");
                         input = scanner.nextLine();
 
-                        // Vàlidar pes
-                        if (input.isBlank()) { // ? Està en blanc o només son espais en blanc
+                        // Validar pes
+                        if (input.isBlank()) { // ? Està en blanc o només són espais en blanc
                             System.out.println("El pes no pot estar en blanc. Si us plau, torni a intentar-ho:\n\n");
                         
                         } else { // ? Si hi ha contingut
@@ -169,14 +169,14 @@ public class App {
                                 if (tempWeight < 0) { // ? El pes és negatiu
                                     System.out.println("El pes no pot ser un nombre negatiu. Si us plau, torni a intentar-ho:\n\n");
                                 
-                                } else if (tempWeight > 120) { // ? El pes es major a 120 Kg
-                                    System.out.println("El pes no pot ser major a 120 Kg. Si us plau, torni a intentar-ho:\n\n");
+                                } else if (tempWeight > 120) { // ? El pes es major a 120 kg
+                                    System.out.println("El pes no pot ser major a 120 kg. Si us plau, torni a intentar-ho:\n\n");
                                 
                                 } else {
                                     inputLoop = false;
                                 }
                             
-                            } catch (java.lang.NumberFormatException e) { // ? No es un nombre
+                            } catch (java.lang.NumberFormatException e) { // ? No és un nombre
                                 System.out.println("El pes ha de ser un nombre (enter o decimal). Si us plau, torni a intentar-ho:\n\n");
                             
                             } catch (Exception e) { // ? Altres
@@ -192,8 +192,8 @@ public class App {
                         System.out.print("Introdueixi la seva alçada (m), si us plau: ");
                         input = scanner.nextLine();
 
-                        // Vàlidar alçada
-                        if (input.isBlank()) { // ? Està en blanc o només son espais en blanc
+                        // Validar alçada
+                        if (input.isBlank()) { // ? Està en blanc o només són espais en blanc
                             System.out.println("L'alçada no pot estar en blanc. Si us plau, torni a intentar-ho:\n\n");
                         
                         } else { // ? Si hi ha contingut
@@ -210,8 +210,8 @@ public class App {
                                     inputLoop = false;
                                 }
                             
-                            } catch (java.lang.NumberFormatException e) { // ? No es un nombre
-                                System.out.println("L'alçada a de ser un nombre. Si us plau, torni a intentar-ho:\n\n");
+                            } catch (java.lang.NumberFormatException e) { // ? No és un nombre
+                                System.out.println("L'alçada ha de ser un nombre. Si us plau, torni a intentar-ho:\n\n");
                             
                             } catch (Exception e) { // ? Altres
                                 System.out.println("Alguna cosa ha sortit malament. Si us plau, torni a intentar-ho:\n\n");
@@ -235,7 +235,7 @@ public class App {
                     // * Validació
                     boolean canMod = (!name.isEmpty()) && (age != -1) && (weight != -1) && (height != -1);
                     if (!canMod) {
-                        System.out.println("No s'han trobat dades. Si us plau, introdueixi les dades previament:\n\n");
+                        System.out.println("No s'han trobat dades. Si us plau, introdueixi les dades prèviament:\n\n");
                         break;
                     }
 
@@ -278,7 +278,7 @@ public class App {
                                 needContinue = true;
                             }
 
-                            // ? Comprovar si es dins el rang
+                            // ? Comprovar si és dins el rang
                             if (menuOption > 4 || menuOption < 1) {
                                 System.out.println("L'opció seleccionada no existeix. Si us plau, torni a intentar-ho:\n\n");
                                 needContinue = true;
@@ -303,15 +303,15 @@ public class App {
                                 System.out.print("Introdueixi el seu nom complet (sense accents), si us plau: ");
                                 tempName = scanner.nextLine();
 
-                                // Vàlidar nom
-                                if (tempName.isBlank()) { // ? Està en blanc o només son espais en blanc
-                                    System.out.println("El nom no pot està en blanc. Si us plau, torni a intentar-ho:\n\n");
+                                // Validar nom
+                                if (tempName.isBlank()) { // ? Està en blanc o només són espais en blanc
+                                    System.out.println("El nom no pot estar en blanc. Si us plau, torni a intentar-ho:\n\n");
 
                                 } else if (tempName.length() < 3) { // ? El nom és massa curt
-                                    System.out.println("El nom es massa curt. Si us plau, torni a intentar-ho:\n\n");
+                                    System.out.println("El nom és massa curt. Si us plau, torni a intentar-ho:\n\n");
 
                                 } else if (tempName.length() > 30) { // ? El nom és massa llarg
-                                    System.out.println("El nom es massa llarg. Si us plau, torni a intentar-ho:\n\n");
+                                    System.out.println("El nom és massa llarg. Si us plau, torni a intentar-ho:\n\n");
 
                                 } else {
                                     try {
@@ -338,9 +338,9 @@ public class App {
                                 System.out.print("Introdueixi la seva edat, si us plau: ");
                                 input = scanner.nextLine();
 
-                                // Vàlidar edat
-                                if (input.isBlank()) { // ? Està en blanc o només son espais en blanc
-                                    System.out.println("L'edat no pot està en blanc. Si us plau, torni a intentar-ho:\n\n");
+                                // Validar edat
+                                if (input.isBlank()) { // ? Està en blanc o només són espais en blanc
+                                    System.out.println("L'edat no pot estar en blanc. Si us plau, torni a intentar-ho:\n\n");
 
                                 } else { // ? Si hi ha contingut
                                     try {
@@ -377,11 +377,11 @@ public class App {
                             // Obtenció de la nova dada
                             inputLoop = true;
                             while (inputLoop) {
-                                System.out.print("Introdueixi el seu pes (Kg), si us plau: ");
+                                System.out.print("Introdueixi el seu pes (kg), si us plau: ");
                                 input = scanner.nextLine();
 
-                                // Vàlidar pes
-                                if (input.isBlank()) { // ? Està en blanc o només son espais en blanc
+                                // Validar pes
+                                if (input.isBlank()) { // ? Està en blanc o només són espais en blanc
                                     System.out.println("El pes no pot estar en blanc. Si us plau, torni a intentar-ho:\n\n");
                                 
                                 } else { // ? Si hi ha contingut
@@ -391,14 +391,14 @@ public class App {
                                         if (tempWeight < 0) { // ? El pes és negatiu
                                             System.out.println("El pes no pot ser un nombre negatiu. Si us plau, torni a intentar-ho:\n\n");
                                         
-                                        } else if (tempWeight > 120) { // ? El pes es major a 120 Kg
-                                            System.out.println("El pes no pot ser major a 120 Kg. Si us plau, torni a intentar-ho:\n\n");
+                                        } else if (tempWeight > 120) { // ? El pes és major a 120 kg
+                                            System.out.println("El pes no pot ser major a 120 kg. Si us plau, torni a intentar-ho:\n\n");
                                         
                                         } else {
                                             inputLoop = false;
                                         }
                                     
-                                    } catch (java.lang.NumberFormatException e) { // ? No es un nombre
+                                    } catch (java.lang.NumberFormatException e) { // ? No és un nombre
                                         System.out.println("El pes ha de ser un nombre (enter o decimal). Si us plau, torni a intentar-ho:\n\n");
                                     
                                     } catch (Exception e) { // ? Altres
@@ -423,8 +423,8 @@ public class App {
                                 System.out.print("Introdueixi la seva alçada (m), si us plau: ");
                                 input = scanner.nextLine();
 
-                                // Vàlidar alçada
-                                if (input.isBlank()) { // ? Està en blanc o només son espais en blanc
+                                // Validar alçada
+                                if (input.isBlank()) { // ? Està en blanc o només són espais en blanc
                                     System.out.println("L'alçada no pot estar en blanc. Si us plau, torni a intentar-ho:\n\n");
                                 
                                 } else { // ? Si hi ha contingut
@@ -441,8 +441,8 @@ public class App {
                                             inputLoop = false;
                                         }
                                     
-                                    } catch (java.lang.NumberFormatException e) { // ? No es un nombre
-                                        System.out.println("L'alçada a de ser un nombre. Si us plau, torni a intentar-ho:\n\n");
+                                    } catch (java.lang.NumberFormatException e) { // ? No és un nombre
+                                        System.out.println("L'alçada ha de ser un nombre. Si us plau, torni a intentar-ho:\n\n");
                                     
                                     } catch (Exception e) { // ? Altres
                                         System.out.println("Alguna cosa ha sortit malament. Si us plau, torni a intentar-ho:\n\n");
@@ -487,7 +487,7 @@ public class App {
                     int fcZMin;
                     int fcZMax;
 
-                    // ? Aigua recomenada
+                    // ? Aigua recomanada
                     double water;
 
                     // ? Any de naixement
@@ -495,11 +495,11 @@ public class App {
 
                     // Format del nom
                     String buffer; // ? Utilitzat per la capitalització del nom
-                    boolean upper; // ? Determinar si la lletra es majuscula
+                    boolean upper; // ? Determinar si la lletra es majúscula
 
                     // * Format
                     // Donar format al nom
-                    tempName = name.trim().replaceAll("\\s+", " ").toLowerCase(); // ? Eliminar espais als costats | eliminar espais sobrants | passar a minusculas
+                    tempName = name.trim().replaceAll("\\s+", " ").toLowerCase(); // ? Eliminar espais als costats | eliminar espais sobrants | passar a minúscules
                     
                     buffer = "";
                     for (int i = 0; i < tempName.length(); i++) {

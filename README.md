@@ -7,20 +7,20 @@ En aquest programa es busca controlar la salut general física de les persones.
 ## Opcions
 
 1. __Introduir dades__
-</br>Obtenir per consola i válidar les següents dades:
+</br>Obtenir per consola i validar les següents dades:
     - Nom complet
     - Edat
     - Pes (Kg)
     - Alçada (m)
 
-2. __Modificació de dades__
-</br>Selecciona i modificar una dada concreta.
+2. __Modificar de dades__
+</br>Seleccionar i modificar una dada concreta.
 
 3. __Calcular i visualitzar els paràmetres__
 </br>Calcular una sèrie de paràmetres que mostrarà per pantalla a l’usuari:
     - Nom (amb format)
     - Edat | Pes (kg) | Alçada (m)
-    - IMC (Nº i categoria)
+    - IMC (número i categoria)
     - FC màxima estimada (bpm)
     - Zona FC objectiu (x-y bpm)
     - Aigua recomanada (L/dia)
@@ -30,11 +30,11 @@ En aquest programa es busca controlar la salut general física de les persones.
 
 ## Fitxers
 
-- [__docs/Diagrama__](docs/Diagrama.drawio)
-</br>Aquest conté el diagrama de flux del programa en qüestió.
+- [__docs/Diagrama.drawio__](docs/Diagrama.drawio)
+</br>Aquest fitxer conté el diagrama de flux del programa en qüestió.
 
 - [__tests/Pla de proves.xlsx__](/tests/Pla%20de%20proves.xlsx)
-</br>Aquest conté la planificació de validacions necessàries.
+</br>Aquest fitxer conté la planificació de validacions necessàries.
 
 - [__App.java__](/App.java)
 </br>Fitxer principal del programa.
