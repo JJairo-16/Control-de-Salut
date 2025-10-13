@@ -27,6 +27,30 @@ public class App {
         double tempWeight;
         double tempHeight;
 
+        // * Regles
+        // Menú
+        final int MENU_MIN_OPTION = 1;
+        final int MENU_MAX_OPTION = 4;
+
+        final int MODMENU_MIN_OPTION = 1;
+        final int MODMENU_MAX_OPTION = 4;
+
+        // Nom
+        final int NAME_MIN_LEN = 3;
+        final int NAME_MAX_LEN = 30;
+
+        // Edat
+        final int MIN_AGE = 0;
+        final int MAX_AGE = 120;
+
+        // Pes
+        final double MIN_WEIGHT = 0.0;
+        final double MAX_WEIGHT = 400.0;
+
+        // Altura
+        final double MIN_HEIGHT = 0.5;
+        final double MAX_HEIGHT = 2.5;
+
         // * Crear scanner
         Scanner scanner = new Scanner(System.in);
         String input;
@@ -68,7 +92,7 @@ public class App {
                 }
 
                 // ? Comprovar si es dins el rang
-                if (menuOption > 4 || menuOption < 1) {
+                if (menuOption > MENU_MAX_OPTION || menuOption < MENU_MIN_OPTION) {
                     System.out.println("L'opció seleccionada no existeix. Si us plau, torni a intentar-ho:\n\n");
                     needContinue = true;
                 }
@@ -102,10 +126,10 @@ public class App {
                         if (tempName.isBlank()) { // ? Està en blanc o només són espais en blanc
                             System.out.println("El nom no pot estar en blanc. Si us plau, torni a intentar-ho:\n\n");
 
-                        } else if (tempName.length() < 3) { // ? El nom és massa curt
+                        } else if (tempName.length() < NAME_MIN_LEN) { // ? El nom és massa curt
                             System.out.println("El nom és massa curt. Si us plau, torni a intentar-ho:\n\n");
 
-                        } else if (tempName.length() > 30) { // ? El nom és massa llarg
+                        } else if (tempName.length() > NAME_MAX_LEN) { // ? El nom és massa llarg
                             System.out.println("El nom és massa llarg. Si us plau, torni a intentar-ho:\n\n");
 
                         } else {
@@ -133,11 +157,11 @@ public class App {
                             try {
                                 tempAge = Integer.parseInt(input);
 
-                                if (tempAge < 0) { // ? L'edat es menor a 0
-                                    System.out.println("L'edat no pot ser menor a 0. Si us plau, torni a intentar-ho:\n\n");
+                                if (tempAge < MIN_AGE) { // ? L'edat és menor a 0 (valor per defecte)
+                                    System.out.printf("L'edat no pot ser menor a %d anys. Si us plau, torni a intentar-ho:%n%n%n", MIN_AGE);
                                 
-                                } else if (tempAge > 120) { // ? L'edat es major a 120
-                                    System.out.println("L'edat no pot ser major a 120. Si us plau, torni a intentar-ho:\n\n");
+                                } else if (tempAge > MAX_AGE) { // ? L'edat es major a 120 (valor per defecte)
+                                    System.out.printf("L'edat no pot ser major a %d anys. Si us plau, torni a intentar-ho:%n%n%n", MAX_AGE);
                                 
                                 } else {
                                     inputLoop = false;
@@ -166,11 +190,11 @@ public class App {
                             try {
                                 tempWeight = parseDouble(input);
 
-                                if (tempWeight < 0) { // ? El pes és negatiu
-                                    System.out.println("El pes no pot ser un nombre negatiu. Si us plau, torni a intentar-ho:\n\n");
+                                if (tempWeight < MIN_WEIGHT) { // ? El pes és menor a 0 (per defecte)
+                                    System.out.printf("El pes no pot ser menor a %.2f. Si us plau, torni a intentar-ho:%n%n%n", MIN_WEIGHT);
                                 
-                                } else if (tempWeight > 120) { // ? El pes es major a 120 kg
-                                    System.out.println("El pes no pot ser major a 120 kg. Si us plau, torni a intentar-ho:\n\n");
+                                } else if (tempWeight > MAX_WEIGHT) { // ? El pes es major a 120 kg (valor per defecte)
+                                    System.out.printf("El pes no pot ser major a %.2f kg. Si us plau, torni a intentar-ho:%n%n%n", MAX_WEIGHT);
                                 
                                 } else {
                                     inputLoop = false;
@@ -200,11 +224,11 @@ public class App {
                             try {
                                 tempHeight = parseDouble(input);
 
-                                if (tempHeight < 0.5) { // ? L'alçada es menor a 0.5m
-                                    System.out.println("L'alçada ha de ser igual o major a 0.5m. Si us plau, torni a intentar-ho:\n\n");
+                                if (tempHeight < MIN_HEIGHT) { // ? L'alçada és menor a 0.5m (per defecte)
+                                    System.out.printf("L'alçada ha de ser igual o major a %.2fm. Si us plau, torni a intentar-ho:%n%n%n", MIN_HEIGHT);
                                 
-                                } else if (tempHeight > 2.5) { // ? L'alçada es major a 2.5m
-                                    System.out.println("L'alçada no pot ser major a 2.5m. Si us plau, torni a intentar-ho:\n\n");
+                                } else if (tempHeight > MAX_HEIGHT) { // ? L'alçada és major a 2.5m (per defecte)
+                                    System.out.printf("L'alçada no pot ser major a %.2fm. Si us plau, torni a intentar-ho:%n%n%n", MAX_HEIGHT);
                                 
                                 } else {
                                     inputLoop = false;
@@ -279,7 +303,7 @@ public class App {
                             }
 
                             // ? Comprovar si és dins el rang
-                            if (menuOption > 4 || menuOption < 1) {
+                            if (menuOption > MODMENU_MAX_OPTION || menuOption < MODMENU_MIN_OPTION) {
                                 System.out.println("L'opció seleccionada no existeix. Si us plau, torni a intentar-ho:\n\n");
                                 needContinue = true;
                             }
@@ -307,10 +331,10 @@ public class App {
                                 if (tempName.isBlank()) { // ? Està en blanc o només són espais en blanc
                                     System.out.println("El nom no pot estar en blanc. Si us plau, torni a intentar-ho:\n\n");
 
-                                } else if (tempName.length() < 3) { // ? El nom és massa curt
+                                } else if (tempName.length() < NAME_MIN_LEN) { // ? El nom és massa curt
                                     System.out.println("El nom és massa curt. Si us plau, torni a intentar-ho:\n\n");
 
-                                } else if (tempName.length() > 30) { // ? El nom és massa llarg
+                                } else if (tempName.length() > NAME_MAX_LEN) { // ? El nom és massa llarg
                                     System.out.println("El nom és massa llarg. Si us plau, torni a intentar-ho:\n\n");
 
                                 } else {
@@ -346,11 +370,11 @@ public class App {
                                     try {
                                         tempAge = Integer.parseInt(input);
 
-                                        if (tempAge < 0) { // ? L'edat es menor a 0
-                                            System.out.println("L'edat no pot ser menor a 0. Si us plau, torni a intentar-ho:\n\n");
+                                        if (tempAge < MIN_AGE) { // ? L'edat és menor a 0 (per defecte)
+                                            System.out.printf("L'edat no pot ser menor a %d anys. Si us plau, torni a intentar-ho:%n%n%n", MIN_AGE);
                                         
-                                        } else if (tempAge > 120) { // ? L'edat es major a 120
-                                            System.out.println("L'edat no pot ser major a 120. Si us plau, torni a intentar-ho:\n\n");
+                                        } else if (tempAge > MAX_AGE) { // ? L'edat es major a 120 (per defecte)
+                                            System.out.printf("L'edat no pot ser major a %d anys. Si us plau, torni a intentar-ho:%n%n%n", MAX_AGE);
                                         
                                         } else {
                                             inputLoop = false;
@@ -388,11 +412,11 @@ public class App {
                                     try {
                                         tempWeight = parseDouble(input);
 
-                                        if (tempWeight < 0) { // ? El pes és negatiu
-                                            System.out.println("El pes no pot ser un nombre negatiu. Si us plau, torni a intentar-ho:\n\n");
+                                        if (tempWeight < MIN_WEIGHT) { // ? El pes és menor a 0 kg (per defecte)
+                                            System.out.printf("El pes no pot ser menor a %.2f kg. Si us plau, torni a intentar-ho:%n%n%n", MIN_WEIGHT);
                                         
-                                        } else if (tempWeight > 120) { // ? El pes és major a 120 kg
-                                            System.out.println("El pes no pot ser major a 120 kg. Si us plau, torni a intentar-ho:\n\n");
+                                        } else if (tempWeight > MAX_WEIGHT) { // ? El pes és major a 120 kg (per defecte)
+                                            System.out.printf("El pes no pot ser major a %.2f kg. Si us plau, torni a intentar-ho:%n%n%n", MAX_WEIGHT);
                                         
                                         } else {
                                             inputLoop = false;
@@ -431,11 +455,11 @@ public class App {
                                     try {
                                         tempHeight = parseDouble(input);
 
-                                        if (tempHeight < 0.5) { // ? L'alçada es menor a 0.5m
-                                            System.out.println("L'alçada ha de ser igual o major a 0.5m. Si us plau, torni a intentar-ho:\n\n");
+                                        if (tempHeight < MIN_HEIGHT) { // ? L'alçada és menor a 0.5m (per defecte)
+                                            System.out.printf("L'alçada ha de ser igual o major a %.2fm. Si us plau, torni a intentar-ho:%n%n%n", MIN_HEIGHT);
                                         
-                                        } else if (tempHeight > 2.5) { // ? L'alçada es major a 2.5m
-                                            System.out.println("L'alçada no pot ser major a 2.5m. Si us plau, torni a intentar-ho:\n\n");
+                                        } else if (tempHeight > MAX_HEIGHT) { // ? L'alçada és major a 2.5m (per defecte)
+                                            System.out.printf("L'alçada no pot ser major a %.2fm. Si us plau, torni a intentar-ho:%n%n%n", MAX_HEIGHT);
                                         
                                         } else {
                                             inputLoop = false;
